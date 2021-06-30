@@ -2,8 +2,11 @@ version: "3.9"
 services:
   vue:
     image: jupyter/scipy-notebook
+    user: jovyan
     ports:
-      - "10000:8888"
-    working_dir: /home/jovyan
+      - "8888:8888"
+      # - "10000:8888" #use this if 8888 not work
+    working_dir: /home/jovyan/work
     volumes:
-      - "./prj:/home/jovyan
+      - "./prj:/home/jovyan/work"
+    
